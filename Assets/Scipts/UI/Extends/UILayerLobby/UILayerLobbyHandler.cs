@@ -11,6 +11,9 @@ namespace Assets.Scripts.UI
             if (null != this._gotoGameButton)
             {
                 this._gotoGameButton.onClick.AddListener(_HandleOnClickGotoGame);
+            }
+            if (null != this._gotoJoinButton)
+            {
                 this._gotoJoinButton.onClick.AddListener(_HandleOnClickGotoJoin);
             }
         }
@@ -19,6 +22,9 @@ namespace Assets.Scripts.UI
             if(null!= this._gotoGameButton)
             {
                 this._gotoGameButton.onClick.RemoveListener(_HandleOnClickGotoGame);
+            }
+            if (null != this._gotoJoinButton)
+            {
                 this._gotoJoinButton.onClick.RemoveListener(_HandleOnClickGotoJoin);
             }
         }

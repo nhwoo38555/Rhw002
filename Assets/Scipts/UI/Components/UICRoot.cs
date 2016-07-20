@@ -20,6 +20,9 @@ namespace Assets.Scripts.UI
                 case UILayerType.GAME_LOADING: { uiLayerObject = GameObject.Instantiate(_gameLoadingLayer) as GameObject; }break;
                 case UILayerType.LOBBY: { uiLayerObject = GameObject.Instantiate(_LobbyLayer) as GameObject; }break;
                 case UILayerType.JOIN: { uiLayerObject = GameObject.Instantiate(_JoinLayer) as GameObject; }break;
+                case UILayerType.GAMELOBBY: { uiLayerObject = GameObject.Instantiate(_GameLobbyLayer) as GameObject; } break;
+                case UILayerType.GAMESCENE: { uiLayerObject = GameObject.Instantiate(_GameScene) as GameObject; } break;
+                case UILayerType.GAMESTAGE: { uiLayerObject = GameObject.Instantiate(_GameStage) as GameObject; } break;
             }
 
             if (null != uiLayerObject)
@@ -41,6 +44,9 @@ namespace Assets.Scripts.UI
                     case UILayerType.GAME_LOADING: { uiLayer = new UILayerGameLoading(); } break;
                     case UILayerType.LOBBY: { uiLayer = new UILayerLobby(); } break;
                     case UILayerType.JOIN: { uiLayer = new  UILayerJoin(); } break;
+                    case UILayerType.GAMELOBBY: { uiLayer = new UILayerGameLobby(); } break;
+                    case UILayerType.GAMESCENE: { uiLayer = new UILayerGameScene(); } break;
+                    case UILayerType.GAMESTAGE: { uiLayer = new UILayerGameStage(); } break;
                 }
                 if (null != uiLayer)
                 {
@@ -64,6 +70,13 @@ namespace Assets.Scripts.UI
         private UnityEngine.Object _gameLoadingLayer = null;
         [SerializeField]
         private UnityEngine.Object _JoinLayer = null;
+        [SerializeField]
+        private UnityEngine.Object _GameLobbyLayer = null;
+        [SerializeField]
+        private UnityEngine.Object _GameScene = null;
+        [SerializeField]
+        private UnityEngine.Object _GameStage = null;
+
         private RectTransform _uiRootRectTransform = null;
 
     }

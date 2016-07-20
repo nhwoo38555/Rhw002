@@ -10,6 +10,9 @@ using System.Collections;
         GAME_LOADING,
         LOBBY,
         JOIN,
+        GAMELOBBY,
+        GAMESCENE,
+        GAMESTAGE,
         MAX,
         NONE = MAX,
         }
