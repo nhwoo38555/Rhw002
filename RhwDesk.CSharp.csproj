@@ -66,24 +66,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scipts\Main.cs" />
-    <Compile Include="Assets\Scipts\UI\Components\UICRoot.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerGame\UILayerGame.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerGame\UILayerGameHandler.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerGameLoading\UILayerGameLoading.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerGameStage\UILayerGameStageHandler.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerGameStage\UILayetGameStage.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerJoin\UILayerJoin.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerJoin\UILayerJoinHandler.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerLobby\UILayerLobby.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayerLobby\UILayerLobbyHandler.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayetGameLobby\UILayerGameLobby.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayetGameLobby\UILayerGameLobbyHandler.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayetGameScene\UILayerGameScene.cs" />
-    <Compile Include="Assets\Scipts\UI\Extends\UILayetGameScene\UILayerGameSceneHandler.cs" />
-    <Compile Include="Assets\Scipts\UI\UILayerAbstract.cs" />
-    <Compile Include="Assets\Scipts\UI\UILayerType.cs" />
-    <Compile Include="Assets\Scipts\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\GAME\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Main.cs" />
+    <Compile Include="Assets\Scripts\Scene\Extends\SceneGame.cs" />
+    <Compile Include="Assets\Scripts\Scene\Extends\SceneGameLobby.cs" />
+    <Compile Include="Assets\Scripts\Scene\Extends\SceneGameScene.cs" />
+    <Compile Include="Assets\Scripts\Scene\Extends\SceneGameStage.cs" />
+    <Compile Include="Assets\Scripts\Scene\Extends\SceneJoin.cs" />
+    <Compile Include="Assets\Scripts\Scene\Extends\SceneLobby.cs" />
+    <Compile Include="Assets\Scripts\Scene\SceneAbstract.cs" />
+    <Compile Include="Assets\Scripts\Scene\SceneManager.cs" />
+    <Compile Include="Assets\Scripts\Scene\SceneType.cs" />
+    <Compile Include="Assets\Scripts\UI\Components\UICRoot.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerGame\UILayerGame.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerGame\UILayerGameHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerGameLoading\UILayerGameLoading.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerGameStage\UILayerGameStageHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerGameStage\UILayetGameStage.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerJoin\UILayerJoin.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerJoin\UILayerJoinHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerLobby\UILayerLobby.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayerLobby\UILayerLobbyHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayetGameLobby\UILayerGameLobby.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayetGameLobby\UILayerGameLobbyHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayetGameScene\UILayerGameScene.cs" />
+    <Compile Include="Assets\Scripts\UI\Extends\UILayetGameScene\UILayerGameSceneHandler.cs" />
+    <Compile Include="Assets\Scripts\UI\UILayerAbstract.cs" />
+    <Compile Include="Assets\Scripts\UI\UILayerType.cs" />
+    <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\User\UserManager.cs" />
+    <Compile Include="Assets\Scripts\World\Components\WCPlayerSpawn.cs" />
+    <Compile Include="Assets\Scripts\World\Components\WCRoot.cs" />
+    <Compile Include="Assets\Scripts\World\WorldManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
