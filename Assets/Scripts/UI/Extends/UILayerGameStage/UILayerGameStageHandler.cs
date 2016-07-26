@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.Scripts.Scene;
+
 namespace Assets.Scripts.UI { 
 public class UILayerGameStageHandler : MonoBehaviour {
         public void HandleOnActivateLayer()
@@ -20,16 +22,9 @@ public class UILayerGameStageHandler : MonoBehaviour {
         }
         public void _HandleOnClickGotoScene()
         {
-            UIManager.Instance.DeactivateUiLayer(UILayerType.GAMESTAGE);
-            UIManager.Instance.ActivateUILayer(UILayerType.GAMESCENE);
-           
+            SceneManager.Instance.ChangeSceneRequest(SceneType.GAMESCENE);
         }
-        public void _HandleOnClickGotoLobby()
-        {
-            UIManager.Instance.DeactivateUiLayer(UILayerType.GAMESTAGE);
-            UIManager.Instance.ActivateUILayer(UILayerType.LOBBY);
-
-        }
+       
         [SerializeField]
         private Button _gotoGameScene = null;
     }

@@ -15,6 +15,10 @@ namespace Assets.Scripts.Game
                 GameObject playerGo = WorldManager.Instance.rootComponet.playerSpawn.Spawn();
                 UserManager.Instance.SetUserGameObject(playerGo);
                 UserManager.Instance.SetPlayerCamera(WorldManager.Instance.rootComponet.playerCamera);
+                //MonsterManager.
+                GameObject monster = WorldManager.Instance.rootComponet.monsterSpawn.Spawn();
+                GameObject monster2 = WorldManager.Instance.rootComponet.monsterSpawn2.Spawn();
+                GameObject monster3 = WorldManager.Instance.rootComponet.monsterSpawn3.Spawn();
             }           
 
         }

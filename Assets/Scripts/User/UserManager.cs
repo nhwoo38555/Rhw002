@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System;
+using Assets.Scripts.World;
+using Assets.Scripts.Game;
+
 namespace Assets.Scripts.User
 {
     public sealed class UserManager 
@@ -17,7 +20,9 @@ namespace Assets.Scripts.User
                     camera_.transform.localRotation = Quaternion.identity;
                     camera_.transform.localPosition = new Vector3(0f, PLAYER_HEIGHT, 0f);
                 }
+
                 this.playerCamera = camera_;
+               
             }
         }
         public void SetUserGameObject(GameObject UserGameObject_)
@@ -26,7 +31,7 @@ namespace Assets.Scripts.User
             if(null!= this.userGo)
             {
                 this._navMeshAgent = this.userGo.GetComponentInChildren<NavMeshAgent>();
-
+                this._CC = this.userGo.GetComponentInChildren<CharacterController>();
             }
         }
         public void UpdateCustomPre()
@@ -39,25 +44,38 @@ namespace Assets.Scripts.User
         }
         private void _UpdateMoveInput()
         {
+            
             this._moveDirection = Vector3.zero;
             this._moveDirection = new Vector3(0, Input.GetAxis("Mouse X"), 0);
             this._rotateDirection = new Vector3(-Input.GetAxis("Mouse Y"),0, 0);
 
-            if (true == Input.GetKey(KeyCode.UpArrow)){
+            if (true == Input.GetKey(KeyCode.W)){
                 this._moveDirection += new Vector3(0f, 0f, 1f);
             }
-            if (true == Input.GetKey(KeyCode.DownArrow))
+            if (true == Input.GetKey(KeyCode.S))
             {
                 this._moveDirection += new Vector3(0f, 0f, -1f);
             }
-            if (true == Input.GetKey(KeyCode.RightArrow))
+            if (true == Input.GetKey(KeyCode.D))
             {
                 this._moveDirection += new Vector3(1f, 0f, 0f);
             }
-            if (true == Input.GetKey(KeyCode.LeftArrow))
+            if (true == Input.GetKey(KeyCode.A))
             {
                 this._moveDirection += new Vector3(-1f, 0f, 0f);
             }
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                if (Physics.Raycast(playerCamera.transform.position,playerCamera.transform.forward, out hit,range))
+                {
+                    Debug.Log(hit.transform.name);
+                    if(hit.transform.gameObject.tag == "Monster")
+                    {
+                        monsterSpawn.Destroy();
+                    }                                        
+                }
+            }
+            
         }
         private void _UpdateMove()
         {
@@ -67,15 +85,23 @@ namespace Assets.Scripts.User
                 this._navMeshAgent.Move(moveOffset);
                 this.userGo.transform.Rotate(this._moveDirection * TURN_SPEED * Time.deltaTime);
                 this.playerCamera.transform.Rotate(this._rotateDirection * TURN_SPEED * Time.deltaTime);
+                
             }
         }
+       
+
         public string userID { get; set; }
         public GameObject userGo { get; private set; }
         public Camera playerCamera { get; private set; }
         private NavMeshAgent _navMeshAgent = null;
         private Vector3 _moveDirection = Vector3.zero;
         private Vector3 _rotateDirection = Vector3.zero;
-        
+        private float fireRate = 0.3f;
+        private float nextFire;
+        private RaycastHit hit;
+        private float range = 500;
+        private MonsterSpawn monsterSpawn;
+        private CharacterController _CC;
         #region
         private static UserManager _instance = null;
         public static UserManager Instance { get { if (null != _instance) { return _instance; } else { return (_instance = new UserManager()); } } }

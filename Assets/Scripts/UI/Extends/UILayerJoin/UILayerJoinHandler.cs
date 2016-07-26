@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.Scripts.Scene;
 
 namespace Assets.Scripts.UI
 {
@@ -24,8 +25,7 @@ namespace Assets.Scripts.UI
         }
         public void _HandleOnClickGotoLobby()
         {
-            UIManager.Instance.DeactivateUiLayer(UILayerType.JOIN);
-            UIManager.Instance.ActivateUILayer(UILayerType.LOBBY);
+            SceneManager.Instance.ChangeSceneRequest(SceneType.LOBBY);
         }
 
         [SerializeField]

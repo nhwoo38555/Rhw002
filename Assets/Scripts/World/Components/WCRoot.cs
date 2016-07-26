@@ -15,6 +15,9 @@ namespace Assets.Scripts.World
             {
                 this.playerSpawn = this.worldGo.GetComponentInChildren<WCPlayerSpawn>();
                 this.playerCamera = this.worldGo.GetComponentInChildren<Camera>();
+                this.monsterSpawn = this.worldGo.GetComponentInChildren<MonsterSpawn>();
+                this.monsterSpawn2 = this.worldGo.GetComponentInChildren<MonsterSpawn2>();
+                this.monsterSpawn3 = this.worldGo.GetComponentInChildren<MonsterSpawn3>();
             }
         }
         
@@ -33,5 +36,8 @@ namespace Assets.Scripts.World
         public GameObject worldGo { get; private set; }
         public WCPlayerSpawn playerSpawn { get; private set; }
         public Camera playerCamera { get; private set; }
+        public MonsterSpawn monsterSpawn { get; private set; }
+        public MonsterSpawn2 monsterSpawn2 { get; private set; }
+        public MonsterSpawn3 monsterSpawn3 { get; private set; }
     }
 }

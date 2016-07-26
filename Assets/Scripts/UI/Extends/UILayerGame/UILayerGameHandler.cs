@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.Scripts.Scene;
 
 namespace Assets.Scripts.UI
 {
@@ -71,13 +72,11 @@ namespace Assets.Scripts.UI
         }
         public void _HandleOnClickGotoLobby()
         {
-            UIManager.Instance.DeactivateUiLayer(UILayerType.GAME);
-            UIManager.Instance.ActivateUILayer(UILayerType.LOBBY);
+            SceneManager.Instance.ChangeSceneRequest(SceneType.LOBBY);
         }
         public void _HandleOnClickGotoGameLobby()
         {
-            UIManager.Instance.DeactivateUiLayer(UILayerType.GAME);
-            UIManager.Instance.ActivateUILayer(UILayerType.GAMELOBBY);
+            SceneManager.Instance.ChangeSceneRequest(SceneType.GAMELOBBY);
         }
         
         [SerializeField]
